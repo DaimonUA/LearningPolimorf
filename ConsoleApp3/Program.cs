@@ -7,19 +7,19 @@ namespace Learning.Polimorf
     {
         public static void Main()
         {
-            A a = new D();
-            B b = new D();
-            C c = new V(false);
-            D d = new V(true);
-            int x = d.Aa;
-            V v = new V(true);
+            //A a = new D();
+            //B b = new D();
+            //C c = new V(false);
+            //D d = new V(true);
+            //int x = d.Aa;
+            //V v = new V(true);
 
-            a.Print(); //B
-            b.Print(); //B
-            c.Print(); //D
-            d.Print(); //D
-            v.Print(); //
-            Console.WriteLine(x);
+            //a.Print(); //B
+            //b.Print(); //B
+            //c.Print(); //D
+            //d.Print(); //D
+            //v.Print(); //
+            //Console.WriteLine(x);
         }
         class A
         {
