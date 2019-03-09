@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConsoleApp3
+namespace Learning.Polimorf
 {
 
     class Program
