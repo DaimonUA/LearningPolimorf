@@ -9,16 +9,14 @@ namespace HomeWork.MethodOverloading
         private int cX;
         private int cY;
         private int radius;
-        public int CenterX { get => cX; }
-        public int CenterY { get => cY; }
-        public int Radius { get; }
+        public int CenterX { get => cX; set => value = cX; }
+        public int CenterY { get => cY; set => value = cY; }
+        public int Radius { get => radius; set => value = radius; }
         public Circle()
         {
-            if ((RequestCoordinates("Введите координаты центра X", out cX))
-                && (RequestCoordinates("Введите координаты центра Y", out cY))
-                && (RequestCoordinates("Enter radius", out radius)))
-                { }
-            else
+            if (!(Dialog.GetCoordinates("Введите координаты центра X", out cX)
+                && Dialog.GetCoordinates("Введите координаты центра Y", out cY)
+                && Dialog.GetCoordinates("Enter radius", out radius)))
             {
                 throw new Exception("you are cancel");
             }
@@ -26,30 +24,35 @@ namespace HomeWork.MethodOverloading
         }
         public Circle(int centerX, int centerY, int radius)
         {
-            this.cX = centerX;
-            this.cY = centerY;
+            cX = centerX;
+            cY = centerY;
             this.radius = radius;
         }
 
-        private static bool RequestCoordinates(string strRequest, out int coord)
+        public double GetCircumference()
         {
-            bool res = false;
-            coord = 0;
-            string strRequestFull = strRequest + " (q-выход)";
-            do
-            {
-                Console.Clear();
-                Console.Write(strRequestFull);
-                string str = Console.ReadLine();
-                if (str == "q") break;
-                if (int.TryParse(str, out coord))
-                {
-                    res = true;
-                }
-                    
-            } while (!res);
+            return GetCircumference(this);
+        }
+        public double GetCircumference(Circle c)
+        {
+            return GetCircumference(c.radius);
+        }
+        public double GetCircumference(int radius)
+        {
+            return (double)2 * Math.PI * radius;
+        }
 
-            return res;
+        public bool CheckPoint(int x, int y)
+        {
+            //(x - x0) ^ 2 + (y - y0) ^ 2 <= R ^ 2
+            return Math.Pow(x - CenterX, 2) + Math.Pow(y - CenterY, 2) <= Math.Pow(Radius, 2);
+        }
+        public override string ToString()
+        {
+
+            string str = "\nX={0} Y={1} R={2}";
+            return String.Format(str, cX, cY, radius);
+           
         }
     }
 }

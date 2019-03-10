@@ -21,17 +21,56 @@ namespace HomeWork.MethodOverloading
     {
         static void Main(string[] args)
         {
-            //Circle c = new Circle(10, 20, 5);
-            try
+            byte mode = GetMode();
+            if (mode == 2) return;
+            Circle circ0 = (Circle)null;
+            if (mode == 0)
             {
-                Circle c0 = new Circle();
+
+                try
+                {
+                    circ0 = new Circle();
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.ReadKey();
+                }
             }
-            catch (Exception e)
+            else
+                circ0 = new Circle(0, 0, 10);
+            // finally { }
+            //длина окружности
+            if (circ0.Radius > 0)
             {
-                Console.WriteLine(e.Message);
-                Console.ReadKey();
+                Console.WriteLine(circ0.GetCircumference());
+                Console.WriteLine(circ0.GetCircumference(circ0.Radius));
+                Console.WriteLine(circ0.GetCircumference(circ0));
+            };
+            //попадание произвольной точки в окружность
+            int x; int y;
+            if (Dialog.GetCoordinates("Введите координату X произвольной точки:", out x,false)
+                && Dialog.GetCoordinates("Введите координату Y произвольной точки:", out y,false))
+            {
+                if (circ0.CheckPoint(x, y))
+                    Console.WriteLine("YES");
+                else
+                    Console.WriteLine("Noooo");
             }
-            finally { }
+            //override ToString()
+            Console.WriteLine(circ0.ToString());
+        }
+        static byte GetMode()
+        {
+            Console.WriteLine("Выберите режим работы с кругом (0-произвольный,1-дефолтный,другое - выход):");
+            ConsoleKeyInfo key = Console.ReadKey();
+            Console.WriteLine();
+            if (key.KeyChar =='0')
+            return  0;
+            if (key.KeyChar == '1')
+                return 1;
+            return 2;
         }
     }
 
