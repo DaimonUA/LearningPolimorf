@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning.Polimorf", "ConsoleApp3\Learning.Polimorf.csproj", "{5E58EAC8-E64F-412A-AB62-8673FDDDD07A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork.MethodOverloading", "ConsoleApp1\HomeWork.MethodOverloading.csproj", "{A7581FE4-3554-470D-91E7-39F8DAD0BFF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork.MethodOverloading", "ConsoleApp1\HomeWork.MethodOverloading.csproj", "{A7581FE4-3554-470D-91E7-39F8DAD0BFF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork.TypeConversion", "ConsoleApp2\HomeWork.TypeConversion.csproj", "{6968C62E-722E-46C5-9F35-B64C3178127F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A7581FE4-3554-470D-91E7-39F8DAD0BFF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7581FE4-3554-470D-91E7-39F8DAD0BFF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7581FE4-3554-470D-91E7-39F8DAD0BFF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6968C62E-722E-46C5-9F35-B64C3178127F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6968C62E-722E-46C5-9F35-B64C3178127F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6968C62E-722E-46C5-9F35-B64C3178127F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6968C62E-722E-46C5-9F35-B64C3178127F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
